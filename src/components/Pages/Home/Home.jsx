@@ -1,9 +1,10 @@
+import Banner from "../../Sheard/Banner";
 
 
 const Home = () => {
     return (
         <div>
-            <h2>This is from Home page</h2>
+            <Banner></Banner>
         </div>
     );
 };
