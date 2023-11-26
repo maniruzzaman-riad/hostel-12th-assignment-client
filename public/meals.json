@@ -1,0 +1,174 @@
+[
+    {
+      "meal_title": "Scrambled Eggs",
+      "meal_category": "Breakfast",
+      "image": "scrambled_eggs.jpg",
+      "ingredients": ["eggs", "butter", "salt", "pepper"],
+      "description": "Fluffy scrambled eggs cooked to perfection.",
+      "price": 8.99,
+      "rating": 4.5,
+      "post_date": "2023-01-01",
+      "likes": 120,
+      "reviews": [
+        {"user": "Alice", "comment": "Delicious breakfast!"},
+        {"user": "Bob", "comment": "Simple and tasty."}
+      ],
+      "distributor_name": "Fresh Eats",
+      "distributor_email": "info@fresheats.com"
+    },
+    {
+      "meal_title": "Chicken Caesar Salad",
+      "meal_category": "Lunch",
+      "image": "caesar_salad.jpg",
+      "ingredients": ["chicken", "romaine lettuce", "croutons", "parmesan", "caesar dressing"],
+      "description": "A classic Caesar salad with grilled chicken.",
+      "price": 12.99,
+      "rating": 4.8,
+      "post_date": "2023-02-05",
+      "likes": 150,
+      "reviews": [
+        {"user": "Charlie", "comment": "Perfect for a light lunch."},
+        {"user": "David", "comment": "The dressing is amazing!"}
+      ],
+      "distributor_name": "Green Delights",
+      "distributor_email": "info@greendelights.com"
+    },
+    {
+      "meal_title": "Scrambled Eggs",
+      "meal_category": "Breakfast",
+      "image": "scrambled_eggs.jpg",
+      "ingredients": ["eggs", "butter", "salt", "pepper"],
+      "description": "Fluffy scrambled eggs cooked to perfection.",
+      "price": 8.99,
+      "rating": 4.5,
+      "post_date": "2023-01-01",
+      "likes": 120,
+      "reviews": [
+        {"user": "Alice", "comment": "Delicious breakfast!"},
+        {"user": "Bob", "comment": "Simple and tasty."}
+      ],
+      "distributor_name": "Fresh Eats",
+      "distributor_email": "info@fresheats.com"
+    },
+    {
+      "meal_title": "Chicken Caesar Salad",
+      "meal_category": "Dinner",
+      "image": "caesar_salad.jpg",
+      "ingredients": ["chicken", "romaine lettuce", "croutons", "parmesan", "caesar dressing"],
+      "description": "A classic Caesar salad with grilled chicken.",
+      "price": 12.99,
+      "rating": 4.8,
+      "post_date": "2023-02-05",
+      "likes": 150,
+      "reviews": [
+        {"user": "Charlie", "comment": "Perfect for a light lunch."},
+        {"user": "David", "comment": "The dressing is amazing!"}
+      ],
+      "distributor_name": "Green Delights",
+      "distributor_email": "info@greendelights.com"
+    },
+    {
+      "meal_title": "Scrambled Eggs",
+      "meal_category": "Breakfast",
+      "image": "scrambled_eggs.jpg",
+      "ingredients": ["eggs", "butter", "salt", "pepper"],
+      "description": "Fluffy scrambled eggs cooked to perfection.",
+      "price": 8.99,
+      "rating": 4.5,
+      "post_date": "2023-01-01",
+      "likes": 120,
+      "reviews": [
+        {"user": "Alice", "comment": "Delicious breakfast!"},
+        {"user": "Bob", "comment": "Simple and tasty."}
+      ],
+      "distributor_name": "Fresh Eats",
+      "distributor_email": "info@fresheats.com"
+    },
+    {
+      "meal_title": "Chicken Caesar Salad",
+      "meal_category": "Dinner",
+      "image": "caesar_salad.jpg",
+      "ingredients": ["chicken", "romaine lettuce", "croutons", "parmesan", "caesar dressing"],
+      "description": "A classic Caesar salad with grilled chicken.",
+      "price": 12.99,
+      "rating": 4.8,
+      "post_date": "2023-02-05",
+      "likes": 150,
+      "reviews": [
+        {"user": "Charlie", "comment": "Perfect for a light lunch."},
+        {"user": "David", "comment": "The dressing is amazing!"}
+      ],
+      "distributor_name": "Green Delights",
+      "distributor_email": "info@greendelights.com"
+    },
+    {
+      "meal_title": "Scrambled Eggs",
+      "meal_category": "Dinner",
+      "image": "scrambled_eggs.jpg",
+      "ingredients": ["eggs", "butter", "salt", "pepper"],
+      "description": "Fluffy scrambled eggs cooked to perfection.",
+      "price": 8.99,
+      "rating": 4.5,
+      "post_date": "2023-01-01",
+      "likes": 120,
+      "reviews": [
+        {"user": "Alice", "comment": "Delicious breakfast!"},
+        {"user": "Bob", "comment": "Simple and tasty."}
+      ],
+      "distributor_name": "Fresh Eats",
+      "distributor_email": "info@fresheats.com"
+    },
+    {
+      "meal_title": "Chicken Caesar Salad",
+      "meal_category": "Lunch",
+      "image": "caesar_salad.jpg",
+      "ingredients": ["chicken", "romaine lettuce", "croutons", "parmesan", "caesar dressing"],
+      "description": "A classic Caesar salad with grilled chicken.",
+      "price": 12.99,
+      "rating": 4.8,
+      "post_date": "2023-02-05",
+      "likes": 150,
+      "reviews": [
+        {"user": "Charlie", "comment": "Perfect for a light lunch."},
+        {"user": "David", "comment": "The dressing is amazing!"}
+      ],
+      "distributor_name": "Green Delights",
+      "distributor_email": "info@greendelights.com"
+    },
+    {
+      "meal_title": "Scrambled Eggs",
+      "meal_category": "Breakfast",
+      "image": "scrambled_eggs.jpg",
+      "ingredients": ["eggs", "butter", "salt", "pepper"],
+      "description": "Fluffy scrambled eggs cooked to perfection.",
+      "price": 8.99,
+      "rating": 4.5,
+      "post_date": "2023-01-01",
+      "likes": 120,
+      "reviews": [
+        {"user": "Alice", "comment": "Delicious breakfast!"},
+        {"user": "Bob", "comment": "Simple and tasty."}
+      ],
+      "distributor_name": "Fresh Eats",
+      "distributor_email": "info@fresheats.com"
+    },
+    {
+      "meal_title": "Chicken Caesar Salad",
+      "meal_category": "Lunch",
+      "image": "caesar_salad.jpg",
+      "ingredients": ["chicken", "romaine lettuce", "croutons", "parmesan", "caesar dressing"],
+      "description": "A classic Caesar salad with grilled chicken.",
+      "price": 12.99,
+      "rating": 4.8,
+      "post_date": "2023-02-05",
+      "likes": 150,
+      "reviews": [
+        {"user": "Charlie", "comment": "Perfect for a light lunch."},
+        {"user": "David", "comment": "The dressing is amazing!"}
+      ],
+      "distributor_name": "Green Delights",
+      "distributor_email": "info@greendelights.com"
+    }
+    
+  ]
+  
