@@ -2,9 +2,12 @@ import { useForm } from "react-hook-form";
 import registerLogo from '../../assets/register.svg'
 import { Link } from "react-router-dom";
 import { FcGoogle } from 'react-icons/fc';
+import { useContext } from "react";
+import { AuthContext } from "../Providers/AuthProvider";
 
 
 const Register = () => {
+    const { createNewUser, loginByGoogle } = useContext(AuthContext)
     const {
         register,
         handleSubmit,
@@ -13,10 +16,20 @@ const Register = () => {
 
     const onSubmit = (data) => {
         console.log(data)
+        createNewUser(data.email, data.password)
+            .then(result => {
+                console.log(result);
+            })
     }
 
-    const handleGoogleLogin=()=>{
-
+    const handleGoogleLogin = () => {
+        loginByGoogle()
+        .then(result=>{
+            console.log(result);
+        })
+        .catch(err=>{
+            console.log(err);
+        })
     }
     return (
         <div>

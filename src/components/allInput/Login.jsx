@@ -2,10 +2,13 @@ import { useForm } from "react-hook-form";
 import loginLogo from '../../assets/login.svg'
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../Providers/AuthProvider";
 
 
 
 const Login = () => {
+    const {loginByGoogle} = useContext(AuthContext)
     const {
         register,
         handleSubmit,
@@ -17,7 +20,9 @@ const Login = () => {
     }
 
     const handleGoogleLogin=()=>{
-
+        loginByGoogle()
+        .then()
+        .catch()
     }
     return (
         <div>

@@ -1,14 +1,24 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
 
 
 const Navbar = () => {
+    const { user, logOutUser } = useContext(AuthContext)
+    console.log(user);
 
     const MenuItem = <>
         <Link><li><a>Home</a></li></Link>
         <Link><li><a>Meals</a></li></Link>
         <Link><li><a>Upcoming Meals</a></li></Link>
-        
+
     </>
+
+    const handleLogOut =()=>{
+        logOutUser()
+        .then()
+        .catch()
+    }
 
     return (
         <div>
@@ -34,7 +44,24 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to="/login"><a className="btn">Join US</a></Link>
+                    {
+                        user ? <>
+                            <div className="dropdown dropdown-end">
+                                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-10 rounded-full">
+                                        <img src={user?.photoURL} />
+                                    </div>
+                                </div>
+                                <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                                    <li className="text-3xl"><Link>{user?.displayName}</Link></li>
+                                    <li className="text-3xl"><Link>Dashboard</Link></li>
+                                    <li><button onClick={handleLogOut} className="btn">Logout</button></li>
+                                </ul>
+                            </div>
+                        </> 
+                        : 
+                        <><Link to="/login"><a className="btn">Join US</a></Link></>
+                    }
                 </div>
             </div>
         </div>
