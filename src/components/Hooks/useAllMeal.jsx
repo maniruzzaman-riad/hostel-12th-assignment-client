@@ -5,7 +5,7 @@ const useAllMeal = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetch('meals.json')
+        fetch('http://localhost:5000/meals')
             .then(res => res.json())
             .then(data => {
                 setMeals(data)
