@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import { IoNotifications } from "react-icons/io5";
 
 
 const Navbar = () => {
@@ -11,13 +12,17 @@ const Navbar = () => {
         <Link><li><a>Home</a></li></Link>
         <Link><li><a>Meals</a></li></Link>
         <Link><li><a>Upcoming Meals</a></li></Link>
+        <Link><li><button className="rounded-full">
+            <IoNotifications className="text-3xl"/>
+            {/* <div className="badge badge-secondary">+99</div> */}
+        </button></li></Link>
 
     </>
 
-    const handleLogOut =()=>{
+    const handleLogOut = () => {
         logOutUser()
-        .then()
-        .catch()
+            .then()
+            .catch()
     }
 
     return (
@@ -58,9 +63,9 @@ const Navbar = () => {
                                     <li><button onClick={handleLogOut} className="btn">Logout</button></li>
                                 </ul>
                             </div>
-                        </> 
-                        : 
-                        <><Link to="/login"><a className="btn">Join US</a></Link></>
+                        </>
+                            :
+                            <><Link to="/login"><a className="btn">Join US</a></Link></>
                     }
                 </div>
             </div>
