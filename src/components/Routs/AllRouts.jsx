@@ -5,6 +5,8 @@ import MainHome from "../Layout/MainHome";
 import Home from "../Pages/Home/Home";
 import Login from "../allInput/Login";
 import Register from "../allInput/Register";
+import Dashboard from "../Layout/dashboard/Dashboard";
+import AdminProfile from "../Pages/DashboardPages/admin/AdminProfile";
 
   export const router = createBrowserRouter([
     {
@@ -25,4 +27,14 @@ import Register from "../allInput/Register";
         }
       ]
     },
+    {
+      path:'dashboard',
+      element:<Dashboard></Dashboard>,
+      children:[
+        {
+          path:'adminProfile',
+          element:<AdminProfile></AdminProfile>
+        }
+      ]
+    }
   ]);
