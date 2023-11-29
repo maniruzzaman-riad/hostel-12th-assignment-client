@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FcGoogle } from 'react-icons/fc';
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Register = () => {
@@ -19,13 +20,30 @@ const Register = () => {
         createNewUser(data.email, data.password)
             .then(result => {
                 console.log(result);
+                if(result){
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Registration succesfull",
+                        showConfirmButton: false,
+                        timer: 1500
+                      });
+                }
             })
     }
 
     const handleGoogleLogin = () => {
         loginByGoogle()
         .then(result=>{
-            console.log(result);
+            if(result){
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Login succesfull",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            }
         })
         .catch(err=>{
             console.log(err);

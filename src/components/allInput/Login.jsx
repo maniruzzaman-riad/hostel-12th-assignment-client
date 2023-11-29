@@ -4,11 +4,12 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 
 const Login = () => {
-    const {loginByGoogle} = useContext(AuthContext)
+    const {loginByGoogle, loginUser} = useContext(AuthContext)
     const {
         register,
         handleSubmit,
@@ -17,11 +18,33 @@ const Login = () => {
 
     const onSubmit = (data) => {
         console.log(data)
+        loginUser(data.email, data.password)
+        .then(result=>{
+            if(result){
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Login succesfull",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            }
+        })
     }
 
     const handleGoogleLogin=()=>{
         loginByGoogle()
-        .then()
+        .then(result=>{
+            if(result){
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Login succesfull",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            }
+        })
         .catch()
     }
     return (
