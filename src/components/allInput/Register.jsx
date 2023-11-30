@@ -61,21 +61,21 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
-                                <input type="text" placeholder="Your Name" {...register("name", { required: true })} name="name" className="input input-bordered" required />
+                                <input type="text" placeholder="Your Name" {...register("name", { required: true })} name="name" className="input input-bordered" />
                                 {errors.name && <span>Name is required</span>}
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" placeholder="email" {...register("email", { required: true })} name="email" className="input input-bordered" required />
+                                <input type="email" placeholder="email" {...register("email", { required: true })} name="email" className="input input-bordered" />
                                 {errors.email && <span>email is required</span>}
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" placeholder="password" {...register("password", { required: true })} name="password" className="input input-bordered" required />
+                                <input type="password" placeholder="password" {...register("password", { required: true })} name="password" className="input input-bordered" />
                                 {errors.password && <span>Password is required</span>}
                             </div>
                             {/* {

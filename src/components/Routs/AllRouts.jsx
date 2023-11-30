@@ -7,6 +7,8 @@ import Login from "../allInput/Login";
 import Register from "../allInput/Register";
 import Dashboard from "../Layout/dashboard/Dashboard";
 import AdminProfile from "../Pages/DashboardPages/admin/AdminProfile";
+import AddMeal from "../allInput/AddMeal";
+import PrivateRoute from "./PrivateRoute";
 
   export const router = createBrowserRouter([
     {
@@ -34,6 +36,10 @@ import AdminProfile from "../Pages/DashboardPages/admin/AdminProfile";
         {
           path:'adminProfile',
           element:<AdminProfile></AdminProfile>
+        },
+        {
+          path:'addMeal',
+          element:<PrivateRoute><AddMeal></AddMeal></PrivateRoute>
         }
       ]
     }
