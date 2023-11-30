@@ -5,7 +5,7 @@ const useAllMeal = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetch('http://localhost:5000/meals')
+        fetch('https://hostel-12th-assignment-server.vercel.app/meals')
             .then(res => res.json())
             .then(data => {
                 setMeals(data)

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const axiosPublic = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://hostel-12th-assignment-server.vercel.app'
 })
 const useMealsPublic = () => {
     return axiosPublic;
