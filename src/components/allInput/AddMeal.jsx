@@ -5,11 +5,13 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import SectionTitle from "../Sheard/SectionTitle";
+import useMealsSecure from "../Hooks/useMealsSecure";
 
 
 const AddMeal = () => {
+    const axiosSecure = useMealsSecure()
     const { user } = useContext(AuthContext)
-    const [addMeal,setAddMeal] =useState(true)
+    const [addMeal, setAddMeal] = useState(true)
     const currentDate = new Date()
 
     const {
@@ -19,9 +21,27 @@ const AddMeal = () => {
     } = useForm()
 
     const onSubmit = (data) => {
-        console.log(data)
-        console.log("yes i am clicked");
-        console.log(addMeal);
+        // console.log(data)
+        // console.log("yes i am clicked");
+        // console.log(addMeal);
+        const mealInfo = {
+            meal_category: data.category,
+            description: data.description,
+            distributor: data.distributor,
+            image: data.image,
+            price: data.price,
+            rating: data.rating,
+            meal_title: data.title,
+            distributor_email: user.email,
+            post_date: currentDate
+
+        }
+        if(addMeal){
+            axiosSecure.post('/meals',mealInfo)
+            .then(res=>{
+                console.log(res);
+            })
+        }
 
         // loginUser(data.email, data.password)
         // .then(result=>{
@@ -109,8 +129,8 @@ const AddMeal = () => {
                 </div>
 
                 <div className="form-control mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <button onClick={()=>setAddMeal(true)} className="btn btn-primary">Add Meal</button>
-                    <button onClick={()=>setAddMeal(false)} className="btn btn-secondary">Upcoming</button>
+                    <button onClick={() => setAddMeal(true)} className="btn btn-primary">Add Meal</button>
+                    <button onClick={() => setAddMeal(false)} className="btn btn-secondary">Upcoming</button>
                 </div>
             </form>
         </div>
