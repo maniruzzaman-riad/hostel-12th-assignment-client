@@ -16,7 +16,7 @@ const Dashboard = () => {
                         admin && <>
                             <li><NavLink to="/"> <FaHome />Home</NavLink></li>
                             <li><NavLink to="/dashboard/adminProfile"> <ImProfile />Admin Profile</NavLink></li>
-                            <li><NavLink to="manageUser"> <FaUsersGear />Manage Users</NavLink></li>
+                            <li><NavLink to="/dashboard/usersManage"> <FaUsersGear />Manage Users</NavLink></li>
                             <li><NavLink to="/dashboard/addMeal"> <MdSetMeal />Add Meal</NavLink></li>
                             <li><NavLink to="allMeal"> <MdFastfood />All Meals</NavLink></li>
                             <li><NavLink to="reviews"> <MdOutlineEditNote />All reviews</NavLink></li>

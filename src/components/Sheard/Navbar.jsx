@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { IoNotifications } from "react-icons/io5";
 
@@ -9,13 +9,13 @@ const Navbar = () => {
     console.log(user);
 
     const MenuItem = <>
-        <Link><li><a>Home</a></li></Link>
-        <Link><li><a>Meals</a></li></Link>
-        <Link><li><a>Upcoming Meals</a></li></Link>
-        <Link><li><button className="rounded-full">
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/allMeals">Meals</NavLink></li>
+        <NavLink><li><a>Upcoming Meals</a></li></NavLink>
+        <NavLink><li><button className="rounded-full">
             <IoNotifications className="text-3xl"/>
             {/* <div className="badge badge-secondary">+99</div> */}
-        </button></li></Link>
+        </button></li></NavLink>
 
     </>
 
@@ -39,7 +39,9 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <div>
+                        <h2 className="text-3xl font-bold">UTTARA HOSTEL</h2>
+                    </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -53,7 +55,7 @@ const Navbar = () => {
                         user ? <>
                             <div className="dropdown dropdown-end">
                                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                                    <div className="w-10 rounded-full">
+                                    <div className="w-10 rounded-full border-2">
                                         <img src={user?.photoURL} />
                                     </div>
                                 </div>

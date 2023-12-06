@@ -1,14 +1,17 @@
 import { useForm } from "react-hook-form";
 import registerLogo from '../../assets/register.svg'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from 'react-icons/fc';
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import useMealsPublic from "../Hooks/useMealsPublic";
 
 
 const Register = () => {
-    const { createNewUser, loginByGoogle } = useContext(AuthContext)
+    const { createNewUser, loginByGoogle, userUpdate } = useContext(AuthContext)
+    const axiosPublic = useMealsPublic()
+    const navigate = useNavigate()
     const {
         register,
         handleSubmit,
@@ -20,15 +23,32 @@ const Register = () => {
         createNewUser(data.email, data.password)
             .then(result => {
                 console.log(result);
-                if(result){
-                    Swal.fire({
-                        position: "top-end",
-                        icon: "success",
-                        title: "Registration succesfull",
-                        showConfirmButton: false,
-                        timer: 1500
-                      });
-                }
+                userUpdate(data.name,data.photoURL)
+                .then(()=>{
+                    const userINfo = {
+                        name : data.name,
+                        email : data.email,
+                        membership: 'Bronze'
+                    }
+                    axiosPublic.post('/users',userINfo)
+                    .then(res=>{
+                        if(res.data.insertedId){
+                            Swal.fire({
+                                position: "top-end",
+                                icon: "success",
+                                title: "Registration succesfull",
+                                showConfirmButton: false,
+                                timer: 1500
+                              });
+                              navigate('/')
+                        }
+                    })
+                        
+                })
+                .catch(error=>{
+                    console.log(error);
+                })
+                
             })
     }
 
@@ -43,6 +63,7 @@ const Register = () => {
                     showConfirmButton: false,
                     timer: 1500
                   });
+                  navigate('/')
             }
         })
         .catch(err=>{
@@ -77,6 +98,13 @@ const Register = () => {
                                 </label>
                                 <input type="password" placeholder="password" {...register("password", { required: true })} name="password" className="input input-bordered" />
                                 {errors.password && <span>Password is required</span>}
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Photo URL</span>
+                                </label>
+                                <input type="text" placeholder="password" {...register("photoURL", { required: true })} name="photoURL" className="input input-bordered" />
+                                {errors.photoURL && <span>Photo URL is required</span>}
                             </div>
                             {/* {
                                 checkPassword && <h2 className="text-center my-5 font-semibold text-red-600">{checkPassword}</h2>

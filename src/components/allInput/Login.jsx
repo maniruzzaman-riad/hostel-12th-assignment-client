@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import loginLogo from '../../assets/login.svg'
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 
 const Login = () => {
     const {loginByGoogle, loginUser} = useContext(AuthContext)
+    const navigate = useNavigate()
     const {
         register,
         handleSubmit,
@@ -28,6 +29,7 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                   });
+                  navigate('/')
             }
         })
     }
@@ -43,6 +45,7 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                   });
+                  navigate('/')
             }
         })
         .catch()

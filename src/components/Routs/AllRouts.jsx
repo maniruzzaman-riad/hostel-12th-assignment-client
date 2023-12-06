@@ -9,6 +9,8 @@ import Dashboard from "../Layout/dashboard/Dashboard";
 import AdminProfile from "../Pages/DashboardPages/admin/AdminProfile";
 import AddMeal from "../allInput/AddMeal";
 import PrivateRoute from "./PrivateRoute";
+import AllMeals from "../Pages/AllMeals/AllMeals";
+import UserManage from "../Pages/DashboardPages/admin/UserManage";
 
   export const router = createBrowserRouter([
     {
@@ -26,6 +28,10 @@ import PrivateRoute from "./PrivateRoute";
         {
           path:'/register',
           element:<Register></Register>
+        },
+        {
+          path:'/allMeals',
+          element:<AllMeals></AllMeals>
         }
       ]
     },
@@ -40,6 +46,10 @@ import PrivateRoute from "./PrivateRoute";
         {
           path:'addMeal',
           element:<PrivateRoute><AddMeal></AddMeal></PrivateRoute>
+        },
+        {
+          path:'usersManage',
+          element:<UserManage></UserManage>
         }
       ]
     }

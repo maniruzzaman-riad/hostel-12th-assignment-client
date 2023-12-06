@@ -6,7 +6,7 @@ const Membership = () => {
     return (
         <section>
             <SectionTitle 
-            title="Get Your Packge"
+            title="Get Your Package"
             ></SectionTitle>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="border-2 border-dotted p-3 shadow-gray-700 bg-blue-500 rounded-tl-[100px] rounded-br-[100px]">

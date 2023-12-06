@@ -2,13 +2,14 @@ import { useForm } from "react-hook-form";
 // import Swal from "sweetalert2";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import SectionTitle from "../Sheard/SectionTitle";
 
 
 const AddMeal = () => {
     const { user } = useContext(AuthContext)
+    const [addMeal,setAddMeal] =useState(true)
     const currentDate = new Date()
 
     const {
@@ -19,6 +20,8 @@ const AddMeal = () => {
 
     const onSubmit = (data) => {
         console.log(data)
+        console.log("yes i am clicked");
+        console.log(addMeal);
 
         // loginUser(data.email, data.password)
         // .then(result=>{
@@ -63,7 +66,7 @@ const AddMeal = () => {
                         <label className="label">
                             <span className="text-base font-bold">Price *</span>
                         </label>
-                        <input type="number" placeholder="Price" {...register("price", { required: true })} className="input input-bordered"/>
+                        <input type="number" placeholder="Price" {...register("price", { required: true })} className="input input-bordered" />
                     </div>
                     <div className="form-control">
                         <label className="label">
@@ -78,7 +81,7 @@ const AddMeal = () => {
                             <span className="text-base font-bold">Post date</span>
                         </label>
                         <DatePicker
-                        {...register("post_date", { required: true })}
+                            // {...register("post_date", { required: true })}
                             selected={currentDate}
                             dateFormat="dd-MM-yyyy"
                             readOnly
@@ -102,12 +105,12 @@ const AddMeal = () => {
                     <label className="label">
                         <span className="text-base font-bold">Meal Description *</span>
                     </label>
-                    <textarea className="input input-bordered" placeholder="Write Your Short description" {...register("description", { required: true })}name="description" id="" cols="30" rows="10"></textarea>
+                    <textarea className="input input-bordered" placeholder="Write Your Short description" {...register("description", { required: true })} name="description" id="" cols="30" rows="10"></textarea>
                 </div>
 
-                <div className="form-control mt-6 grid grid-cols-1 md:grid-cols-2 gap-7">
-                    <button className="btn btn-primary">Add Meal</button>
-                    <button className="btn btn-secondary">Upcoming</button>
+                <div className="form-control mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <button onClick={()=>setAddMeal(true)} className="btn btn-primary">Add Meal</button>
+                    <button onClick={()=>setAddMeal(false)} className="btn btn-secondary">Upcoming</button>
                 </div>
             </form>
         </div>
